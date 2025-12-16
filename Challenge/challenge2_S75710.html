@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA Dean's List Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .output-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px dashed #7f8c8d;
+            background-color: #ecf0f1;
+        }
+
+        .eligible {
+            color: green;
+            font-weight: bold;
+        }
+
+        .not-eligible {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Semester Dean's List Eligibility Results</h1>
+
+    <script>
+
+
+        // 1. Define Multi-Dimensional Array studentData)
+        // Format: [Name (String), Credit Hour (Number), Current GPA (Number)]
+
+        var studentData = [
+            ["Ali Bin Ahmad", 15, 3.75],
+            ["Bala A/L Muthu", 12, 3.40],
+            ["Siti Nurhaliza", 18, 4.00],
+            ["Wong Mei Ling", 10, 3.50],
+            ["David Lee", 15, 2.95]
+        ];
+
+
+        // 2. Create function to measure dean list eligibility using conditional statement
+        function checkDeanList(gpa) {
+            if (gpa >= 3.50) {
+                return "Dean's List Eligible";
+            } else {
+                return "Not Dean's List Eligible";
+            }
+        }
+
+        document.write("<div class='output-box'>");
+        document.write("<h2>Section 03 Result</h2>");
+
+        
+
+
+        for (var i = 0; i < studentData.length; i++) {
+
+            // -- AI ASSISTED CODE START --
+            // extract name and gpa from studentData array
+            var name = studentData[i][0];
+            var gpa = studentData[i][2];
+            var status = checkDeanList(gpa);
+            // -- AI ASSISTED CODE END --
+
+            // 4. Print all the output (inside loop)
+            document.write("<div>");
+            document.write("<b>Name:</b> " + name + "<br>");
+            document.write("<b>Current GPA:</b> " + gpa + "<br>");
+
+            if (status === "Dean's List Eligible") {
+                document.write("<b>Status:</b> <span class='eligible'>" + status + "</span><br>");
+            } else {
+                document.write("<b>Status:</b> <span class='not-eligible'>" + status + "</span><br>");
+            }
+
+            document.write("<hr style='border-top: 1px dotted #ccc;'>");
+
+            document.write("</div>");
+        }
+        document.write("</div>");
+
+    </script>
+
+</body>
+
+</html>
