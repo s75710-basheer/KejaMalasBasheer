@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA Dean's List Checker</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Semester Dean's List Eligibility Results</h1>
+    <div>
+        <h2>Add Student Record</h2>
+        <form onsubmit="checkEligibility(event)">
+            <p>Name:</p>
+            <input type="text" id="name" required><br><br>
+
+            <p>Credit Hours:</p>
+            <input type="number" id="creditHours" required><br><br>
+
+            <p>Current GPA:</p>
+            <input type="number" step="0.01" id="gpa" required><br><br>
+
+            <input id="submit" type="submit" value="Check Eligibility">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
